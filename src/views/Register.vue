@@ -43,7 +43,7 @@ export default {
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password);
         console.log(user.message);
-        // this.$router.push("/secret");
+        this.$router.replace({ name: "secret" });
       } catch (err) {
         console.log(err.i.message);
         this.error = err;
