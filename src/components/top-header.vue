@@ -4,7 +4,6 @@
 
       <div>
         <ul class="uk-navbar-nav">
-<!--          <li class="uk-active"><router-link to="/">Домой</router-link></li>-->
           <li v-if="!LoggedIn"><router-link to="/login">войти</router-link> </li>
           <li v-if="!LoggedIn">
             <router-link to="/register">Зарегистрируйтесь</router-link>
@@ -15,7 +14,7 @@
           </li>
           <li v-if="LoggedIn">
             <a  @click="singout">
-              <button class="uk-button uk-button-primary">Выйти</button>
+              <button class="uk-button uk-button-default">Выйти</button>
             </a>
           </li>
         </ul>

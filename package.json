@@ -1,5 +1,5 @@
 {
-  "name": "auth-app",
+  "name": "Timer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "firebase": "^8.6.7",
+    "moment": "^2.29.1",
     "uikit": "^3.9.2",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",

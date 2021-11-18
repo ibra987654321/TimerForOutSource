@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" >
     <top-header></top-header>
-    <router-view  class="uk-container"/>
+    <router-view  class="uk-container" />
   </div>
 </template>
 
@@ -22,6 +22,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+//  height: 100%;
+//min-height: 880px;
 }
 
 #nav {
