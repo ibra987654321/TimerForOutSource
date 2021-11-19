@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <h2>{{title}}</h2>
-    <ChildTimer :running="running" :stop-watch-name="title" :sending="exportT" :localName="this.local" :counter-name="this.counter"/>
+    <ChildTimer :running="running" :stop-watch-name="title" :sending="exportT" :localName="this.local" :counter-name="this.counter" :discharge="discharge"/>
     <div class="uk-button-group">
       <button
           class="uk-button uk-button-primary uk-button-large uk-padding-small uk-padding-remove-top uk-padding-remove-bottom"
@@ -16,12 +16,6 @@
         stop
       </button>
     </div>
-<!--    <button-->
-<!--        class="uk-button uk-button-primary uk-button-large "-->
-<!--        @click="exportT"-->
-<!--    >-->
-<!--      export-->
-<!--    </button>-->
   </div>
 </template>
 <script>
@@ -34,13 +28,13 @@ export default {
     title: String,
     local: String,
     counter: String,
-    exportT: Boolean
+    exportT: Boolean,
+    discharge: Boolean
   },
   data() {
     return {
       UserName: firebase.auth().currentUser.email,
       running: false,
-      // exporting: false
     };
   },
   methods: {
@@ -52,9 +46,6 @@ export default {
       this.running = true;
       localStorage.setItem(this.local, this.running)
     },
-    // exportT: function() {
-    //   this.exporting = true
-    // }
   },
 
 };

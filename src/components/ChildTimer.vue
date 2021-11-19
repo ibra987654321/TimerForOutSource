@@ -29,7 +29,8 @@ export default {
     },
     localName: String,
     counterName: String,
-    stopWatchName: String
+    stopWatchName: String,
+    discharge:Boolean
   },
   watch: {
     running: function(newVal) {
@@ -37,12 +38,17 @@ export default {
       else this.stopT();
     },
     sending: function(newVal) {
-      console.log(newVal);
       if (newVal) this.exportTimerData();
       else this.exportTimerData();
+    },
+    discharge: function() {
+      this.stopT()
+      localStorage.removeItem(this.counterName)
+      localStorage.removeItem(this.localName)
+      window.location.reload();
     }
   },
-  beforeMount() {
+  mounted() {
     if (localStorage.getItem(this.localName)){
       this.startT()
     }
