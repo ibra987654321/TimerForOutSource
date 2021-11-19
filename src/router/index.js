@@ -10,11 +10,11 @@ require("firebase/auth");
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
-    name: "login",
-    component: Login,
-  },
+  // {
+  //   path: "/",
+  //   name: "login",
+  //   component: Login,
+  // },
   {
     path: "/login",
     name: "login",
@@ -26,7 +26,7 @@ const routes = [
     component: Register,
   },
   {
-    path: "/secret",
+    path: "/",
     name: "secret",
     component: Secret,
     meta: { requiresAuth: true },

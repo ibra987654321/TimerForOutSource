@@ -8,7 +8,7 @@
           <li v-if="!LoggedIn">
             <router-link to="/register">Зарегистрируйтесь</router-link>
           </li>
-          <li v-if="LoggedIn"><router-link to="/secret">Секундомер</router-link> </li>
+          <li v-if="LoggedIn"><router-link to="/">Секундомер</router-link> </li>
           <li v-if="LoggedIn">
             <a href="#">{{ currentUser }}</a>
           </li>
