@@ -48,9 +48,17 @@ export default {
       window.location.reload();
     }
   },
+  created() {
+    localStorage.setItem('open', new Date().getTime())
+    window.addEventListener('beforeunload', () => {
+      localStorage.setItem('close', new Date().getTime())
+    });
+
+  },
   mounted() {
     if (localStorage.getItem(this.localName)){
       this.startT()
+      this.time = Math.abs(Number(localStorage.getItem(this.counterName)) + this.dateFunction())
     }
   },
   updated(){
@@ -65,10 +73,15 @@ export default {
       timer: null,
       date: new Date().toISOString().slice(0,10),
       currentUser: firebase.auth().currentUser.email.split("@")[0],
-
     };
   },
   methods: {
+    dateFunction: function () {
+      let start = localStorage.getItem('open')
+      let end = localStorage.getItem('close')
+      let done =Math.abs( (start - end  ) / 1000)
+      return Math.round(done)
+    },
     stopT: function() {
       clearInterval(this.timer);
       if (this.restWhenStop) this.resetT();
